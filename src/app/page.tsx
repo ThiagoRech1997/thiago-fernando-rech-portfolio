@@ -1,102 +1,231 @@
 import Image from "next/image";
+import Profile from "../asset/profile.png";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <div>
+      <header>
+        <div className="container navbar">
+          <div className="logo">TR</div>
+          <ul className="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#experiencia">Experiência</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+      </header>
+      <section id="home" className="hero">
+        <div className="container" style={{ display: "flex", alignItems: "center" }}>
+          <div className="hero-content">
+            <h1>Thiago Fernando Rech</h1>
+            <p>Desenvolvedor Back-End | DBA/ETL | Especialista em SQL Server</p>
+            <p>Transformando dados em soluções de negócios eficientes</p>
+            <a href="#contato" className="btn">Entre em contato</a>
+          </div>
+          <div className="hero-image">
+            <Image
+              src={Profile}
+              alt="Thiago Fernando Rech"
+              width={400}
+              height={400}
+              style={{ borderRadius: "50%" }} // se quiser estilo avatar
+            />
+          </div>
+        </div>
+      </section>
+      <section id="sobre" className="section">
+        <div className="container">
+          <div className="section-header">
+            <h2>Sobre Mim</h2>
+            <p>Conheça um pouco da minha trajetória e habilidades</p>
+          </div>
+          <div className="about-content">
+            <div className="about-text">
+              <p>Engenheiro de Software com atuação sólida como DBA/ETL na área financeira, garantindo a performance, disponibilidade e integridade de sistemas críticos. Experiência com Microsoft SQL Server, Python e TypeScript, com foco em automação de processos, desenvolvimento backend e sustentação de dados bancários.</p>
+              <p>Capacidade comprovada em otimização de queries SQL, resolução de incidentes críticos, manutenção de pipelines ETL e integração de sistemas via REST APIs. Forte compromisso com boas práticas de desenvolvimento, segurança da informação e eficiência operacional.</p>
+              <p>Formado em Ciência da Computação pela Universidade Tecnológica Federal do Paraná, com vasta experiência em pesquisa acadêmica e projetos práticos.</p>
+            </div>
+            <div className="skills">
+              <h3>Habilidades Técnicas</h3>
+              <div>
+                <span className="skill-tag">SQL Server</span>
+                <span className="skill-tag">Oracle</span>
+                <span className="skill-tag">PostgreSQL</span>
+                <span className="skill-tag">Python</span>
+                <span className="skill-tag">JavaScript</span>
+                <span className="skill-tag">TypeScript</span>
+                <span className="skill-tag">C#</span>
+                <span className="skill-tag">Java</span>
+                <span className="skill-tag">ETL</span>
+                <span className="skill-tag">Docker</span>
+                <span className="skill-tag">Git</span>
+                <span className="skill-tag">DevOps</span>
+                <span className="skill-tag">MVC</span>
+                <span className="skill-tag">Arquitetura Hexagonal</span>
+              </div>
+
+              <h3>Idiomas</h3>
+              <div>
+                <span className="skill-tag">Português (Nativo)</span>
+                <span className="skill-tag">Inglês (Intermediário)</span>
+                <span className="skill-tag">Libras (Básico)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="experiencia" className="section" style={{backgroundColor: "#f0f5fa"}}>
+        <div className="container">
+          <div className="section-header">
+            <h2>Experiência Profissional</h2>
+            <p>Minha trajetória no mercado de trabalho</p>
+          </div>
+
+          <div className="timeline">
+            <div className="timeline-item">
+              <div className="timeline-content">
+                <div className="timeline-date">Mar 2025 - Presente</div>
+                <h3 className="timeline-title">Engenheiro de Software</h3>
+                <div className="timeline-company">Silicon Village</div>
+                <p>Atuação como engenheiro de software, aplicando conhecimentos em desenvolvimento backend e bancos de dados para soluções empresariais.</p>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-content">
+                <div className="timeline-date">Fev 2024 - Fev 2025</div>
+                <h3 className="timeline-title">Especialista em ETL</h3>
+                <div className="timeline-company">Stellantis (Terceirizado pela Silicon Village)</div>
+                <p>Sustentação e monitoramento de banco de dados Microsoft SQL Server, análise e otimização de queries SQL, suporte na execução e manutenção de processos ETL para operações financeiras.</p>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-content">
+                <div className="timeline-date">Fev 2024 - Fev 2025</div>
+                <h3 className="timeline-title">Estágio</h3>
+                <div className="timeline-company">Silicon Village</div>
+                <p>Atuação em sustentação de banco de dados, resolução de incidentes em sistemas críticos e desenvolvimento de documentação técnica.</p>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-content">
+                <div className="timeline-date">Mar 2023 - Mar 2024</div>
+                <h3 className="timeline-title">Diretor de Assuntos Gerais</h3>
+                <div className="timeline-company">Centro Acadêmico de Ciência da Computação (CACOMP) - UTFPR</div>
+                <p>Atuação na representação estudantil e organização de eventos acadêmicos.</p>
+              </div>
+            </div>
+
+            <div className="timeline-item">
+              <div className="timeline-content">
+                <div className="timeline-date">Jul 2017 - Dez 2022</div>
+                <h3 className="timeline-title">Pesquisador</h3>
+                <div className="timeline-company">Universidade Tecnológica Federal do Paraná</div>
+                <p>Desenvolvimento de pesquisas na área de computação por mais de 5 anos.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="projetos" className="section">
+        <div className="container">
+          <div className="section-header">
+            <h2>Projetos</h2>
+            <p>Alguns dos meus trabalhos mais recentes</p>
+          </div>
+
+          <div className="projects-grid">
+            <div className="project-card">
+              <div className="project-image">Sistema ETL</div>
+              <div className="project-content">
+                <h3 className="project-title">Sistema de ETL para Dados Financeiros</h3>
+                <p>Desenvolvimento de pipeline ETL para processamento de grandes volumes de dados financeiros com otimização de performance.</p>
+                <div className="project-tags">
+                  <span className="project-tag">SQL Server</span>
+                  <span className="project-tag">Python</span>
+                  <span className="project-tag">ETL</span>
+                </div>
+                <a href="#" className="btn">Ver detalhes</a>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <div className="project-image">API REST</div>
+              <div className="project-content">
+                <h3 className="project-title">API REST para Integração de Sistemas</h3>
+                <p>Desenvolvimento de API para integração entre sistemas legados e aplicações modernas, com foco em segurança e performance.</p>
+                <div className="project-tags">
+                  <span className="project-tag">TypeScript</span>
+                  <span className="project-tag">Node.js</span>
+                  <span className="project-tag">PostgreSQL</span>
+                </div>
+                <a href="#" className="btn">Ver detalhes</a>
+              </div>
+            </div>
+
+            <div className="project-card">
+              <div className="project-image">Dashboard</div>
+              <div className="project-content">
+                <h3 className="project-title">Dashboard de Monitoramento de Banco de Dados</h3>
+                <p>Solução para monitoramento em tempo real de métricas de performance de bancos de dados SQL Server.</p>
+                <div className="project-tags">
+                  <span className="project-tag">C#</span>
+                  <span className="project-tag">SQL Server</span>
+                  <span className="project-tag">React</span>
+                </div>
+                <a href="#" className="btn">Ver detalhes</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section id="contato" className="section" style={{backgroundColor: "#f0f5fa"}}>
+        <div className="container">
+          <div className="section-header">
+            <h2>Contato</h2>
+            <p>Vamos trabalhar juntos? Entre em contato</p>
+          </div>
+
+          <div className="contact-grid">
+            <div className="contact-item">
+              <div className="contact-icon">✉️</div>
+              <h3>Email</h3>
+              <p>thiagorech.1997@gmail.com</p>
+            </div>
+
+            <div className="contact-item">
+              <div className="contact-icon">📱</div>
+              <h3>Telefone</h3>
+              <p>+55 (45) 99135-2082</p>
+            </div>
+
+            <div className="contact-item">
+              <div className="contact-icon">📍</div>
+              <h3>Localização</h3>
+              <p>Serranópolis do Iguaçu, Paraná, Brasil</p>
+            </div>
+
+            <div className="contact-item">
+              <div className="contact-icon">👨‍💻</div>
+              <h3>LinkedIn</h3>
+              <p>www.linkedin.com/in/thiagofernando-rech</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <footer>
+        <div className="container">
+          <p>&copy; 2025 Thiago Fernando Rech. Todos os direitos reservados.</p>
+          <ul className="social-links">
+            <li><a href="https://github.com/ThiagoRech1997" target="_blank">GitHub</a></li>
+            <li><a href="https://www.linkedin.com/in/thiago-fernando-rech/" target="_blank">LinkedIn</a></li>
+            <li><a href="http://lattes.cnpq.br/4521927510441276" target="_blank">Lattes</a></li>
+          </ul>
+        </div>
       </footer>
     </div>
   );
