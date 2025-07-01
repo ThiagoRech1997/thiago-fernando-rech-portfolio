@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Profile from "../asset/profile.png";
 
 export default function Home() {
   return (
@@ -26,7 +25,7 @@ export default function Home() {
           </div>
           <div className="hero-image">
             <Image
-              src={Profile}
+              src="/profile.png"
               alt="Thiago Fernando Rech"
               width={400}
               height={400}
