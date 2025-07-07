@@ -183,7 +183,9 @@ export default function Home() {
 
           <div className="projects-grid">
             <div className="project-card">
-              <div className="project-image">🎸</div>
+              <div className="project-image" style={{width: '100%', height: 180, position: 'relative'}}>
+                <Image src="/toneforge.svg" alt="Arte do ToneForge" fill style={{objectFit: 'cover', borderTopLeftRadius: 12, borderTopRightRadius: 12}} />
+              </div>
               <div className="project-content">
                 <h3 className="project-title">ToneForge - Pedaleira Digital Profissional</h3>
                 <p>Pedaleira digital profissional para Android com processamento de áudio em tempo real. 9 efeitos profissionais, latência ultra-baixa (&lt;3ms), looper multi-track, afinador preciso e suporte MIDI.</p>

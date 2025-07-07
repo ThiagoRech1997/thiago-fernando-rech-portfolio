@@ -1,0 +1,101 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+    <!-- Define filters for glow effects -->
+    <defs>
+        <filter id="neon-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur" />
+            <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+        <filter id="soft-glow" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur in="SourceGraphic" stdDeviation="8" result="blur" />
+            <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+        
+        <!-- Background Gradient -->
+        <radialGradient id="bg-gradient" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+            <stop offset="0%" style="stop-color:#1a2238;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#0a0c10;stop-opacity:1" />
+        </radialGradient>
+        
+        <!-- Grid Pattern -->
+        <pattern id="grid" width="20" height="20" patternUnits="userSpaceOnUse">
+            <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(26, 34, 56, 0.5)" stroke-width="0.5"/>
+        </pattern>
+        
+        <!-- Pedalboard Gradient -->
+        <linearGradient id="board-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#1f2937; stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#111827; stop-opacity:1" />
+        </linearGradient>
+        
+        <!-- Wave Gradient -->
+        <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#00aaff" />
+            <stop offset="50%" stop-color="#00f2ff" />
+            <stop offset="100%" stop-color="#00aaff" />
+        </linearGradient>
+    </defs>
+
+    <!-- Background Elements -->
+    <rect width="800" height="450" fill="url(#bg-gradient)" />
+    <rect width="800" height="450" fill="url(#grid)" opacity="0.5" />
+
+    <!-- Stylized Cables -->
+    <path d="M -10 200 C 100 150, 150 300, 220 280" stroke="#1c2a48" stroke-width="15" fill="none" stroke-linecap="round"/>
+    <path d="M 810 250 C 700 300, 650 150, 580 170" stroke="#1c2a48" stroke-width="15" fill="none" stroke-linecap="round"/>
+
+    <!-- Main Pedalboard Body -->
+    <g transform="translate(150, 100) rotate(-5)">
+        <rect x="0" y="0" width="500" height="250" rx="20" ry="20" fill="url(#board-gradient)" stroke="#2c3e50" stroke-width="1.5"/>
+    </g>
+
+    <!-- Pedalboard Content -->
+    <g transform="translate(150, 100) rotate(-5)">
+        <!-- App Name -->
+        <text x="250" y="50" font-family="'Orbitron', sans-serif" font-size="36" fill="#e0e0e0" text-anchor="middle">ToneForge</text>
+        
+        <!-- Central Interface Screen -->
+        <rect x="50" y="80" width="400" height="80" rx="10" ry="10" fill="#0d1117" />
+        
+        <!-- Sound Wave on Screen -->
+        <path d="M 70 120 Q 95 90, 120 120 T 170 120 T 220 120 Q 245 150, 270 120 T 320 120 T 370 120 Q 395 90, 420 120" stroke="url(#wave-gradient)" stroke-width="3" fill="none" stroke-linecap="round" filter="url(#neon-glow)"/>
+
+        <!-- Footswitches/Buttons -->
+        <!-- Button 1 (Active) -->
+        <g transform="translate(90, 200)">
+            <circle cx="0" cy="0" r="25" fill="#111827"/>
+            <circle cx="0" cy="0" r="22" fill="#0d1117" stroke="#00aaff" stroke-width="2" filter="url(#soft-glow)"/>
+            <circle cx="0" cy="0" r="5" fill="#00f2ff" filter="url(#neon-glow)"/>
+        </g>
+        
+        <!-- Button 2 -->
+        <g transform="translate(190, 200)">
+            <circle cx="0" cy="0" r="25" fill="#111827"/>
+            <circle cx="0" cy="0" r="22" fill="#222" stroke="#444" stroke-width="1.5"/>
+            <circle cx="0" cy="0" r="5" fill="#333"/>
+        </g>
+
+        <!-- Button 3 -->
+        <g transform="translate(290, 200)">
+            <circle cx="0" cy="0" r="25" fill="#111827"/>
+            <circle cx="0" cy="0" r="22" fill="#222" stroke="#444" stroke-width="1.5"/>
+            <circle cx="0" cy="0" r="5" fill="#333"/>
+        </g>
+
+        <!-- Button 4 (Active) -->
+        <g transform="translate(390, 200)">
+            <circle cx="0" cy="0" r="25" fill="#111827"/>
+            <circle cx="0" cy="0" r="22" fill="#0d1117" stroke="#00aaff" stroke-width="2" filter="url(#soft-glow)"/>
+            <circle cx="0" cy="0" r="5" fill="#00f2ff" filter="url(#neon-glow)"/>
+        </g>
+    </g>
+    
+    <!-- Stylized Guitar Shape in background -->
+    <path d="M 650 50 Q 750 150, 650 400 L 620 400 Q 550 250, 620 50 Z" fill="#1a2238" opacity="0.5" transform="rotate(15, 650, 225)"/>
+
+</svg>
