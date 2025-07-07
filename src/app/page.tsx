@@ -1,17 +1,36 @@
+"use client";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Home() {
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false);
+  };
+
   return (
     <div>
       <header>
         <div className="container navbar">
           <div className="logo">TR</div>
-          <ul className="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#experiencia">Experiência</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#contato">Contato</a></li>
+          <button 
+            className="mobile-menu-button" 
+            onClick={toggleMobileMenu}
+            aria-label="Toggle mobile menu"
+          >
+            ☰
+          </button>
+          <ul className={`nav-links ${isMobileMenuOpen ? 'mobile-open' : ''}`}>
+            <li><a href="#home" onClick={closeMobileMenu}>Home</a></li>
+            <li><a href="#sobre" onClick={closeMobileMenu}>Sobre</a></li>
+            <li><a href="#experiencia" onClick={closeMobileMenu}>Experiência</a></li>
+            <li><a href="#projetos" onClick={closeMobileMenu}>Projetos</a></li>
+            <li><a href="#contato" onClick={closeMobileMenu}>Contato</a></li>
           </ul>
         </div>
       </header>
