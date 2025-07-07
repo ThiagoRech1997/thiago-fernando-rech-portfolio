@@ -116,6 +116,7 @@ export default function Home() {
           <div className="timeline">
             <div className="timeline-item">
               <div className="timeline-content">
+                <div className="timeline-icon">💻</div>
                 <div className="timeline-date">Mar 2025 - Presente</div>
                 <h3 className="timeline-title">Engenheiro de Software</h3>
                 <div className="timeline-company">Silicon Village</div>
@@ -125,6 +126,7 @@ export default function Home() {
 
             <div className="timeline-item">
               <div className="timeline-content">
+                <div className="timeline-icon">🗃️</div>
                 <div className="timeline-date">Fev 2024 - Fev 2025</div>
                 <h3 className="timeline-title">Especialista em ETL</h3>
                 <div className="timeline-company">Stellantis (Terceirizado pela Silicon Village)</div>
@@ -134,6 +136,7 @@ export default function Home() {
 
             <div className="timeline-item">
               <div className="timeline-content">
+                <div className="timeline-icon">🎓</div>
                 <div className="timeline-date">Fev 2024 - Fev 2025</div>
                 <h3 className="timeline-title">Estágio</h3>
                 <div className="timeline-company">Silicon Village</div>
@@ -143,6 +146,7 @@ export default function Home() {
 
             <div className="timeline-item">
               <div className="timeline-content">
+                <div className="timeline-icon">🏛️</div>
                 <div className="timeline-date">Mar 2023 - Mar 2024</div>
                 <h3 className="timeline-title">Diretor de Assuntos Gerais</h3>
                 <div className="timeline-company">Centro Acadêmico de Ciência da Computação (CACOMP) - UTFPR</div>
@@ -152,6 +156,7 @@ export default function Home() {
 
             <div className="timeline-item">
               <div className="timeline-content">
+                <div className="timeline-icon">🔬</div>
                 <div className="timeline-date">Jul 2017 - Dez 2022</div>
                 <h3 className="timeline-title">Pesquisador</h3>
                 <div className="timeline-company">Universidade Tecnológica Federal do Paraná</div>
