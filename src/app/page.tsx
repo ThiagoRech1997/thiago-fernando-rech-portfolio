@@ -185,15 +185,20 @@ export default function Home() {
             <div className="project-card">
               <div className="project-image">🎸</div>
               <div className="project-content">
-                <h3 className="project-title">ToneForge - Digital Pedalboard</h3>
-                <p>Pedalboard digital multi-efeitos para Android com processamento de áudio em tempo real usando código nativo C++. Inclui efeitos como distorção, delay, reverb, chorus e mais.</p>
+                <h3 className="project-title">ToneForge - Pedaleira Digital Profissional</h3>
+                <p>Pedaleira digital profissional para Android com processamento de áudio em tempo real. 9 efeitos profissionais, latência ultra-baixa (&lt;3ms), looper multi-track, afinador preciso e suporte MIDI.</p>
                 <div className="project-tags">
                   <span className="project-tag">Java</span>
                   <span className="project-tag">C++</span>
                   <span className="project-tag">Android</span>
                   <span className="project-tag">JNI</span>
+                  <span className="project-tag">Audio DSP</span>
+                  <span className="project-tag">MIDI</span>
                 </div>
-                <a href="https://github.com/ThiagoRech1997/ToneForge" target="_blank" rel="noopener noreferrer" className="btn">Ver no GitHub</a>
+                <div style={{display: "flex", gap: "10px", flexWrap: "wrap"}}>
+                  <a href="https://thiagorech1997.github.io/toneforge-landing/" target="_blank" rel="noopener noreferrer" className="btn">Ver página do ToneForge</a>
+                  <a href="https://github.com/ThiagoRech1997/ToneForge" target="_blank" rel="noopener noreferrer" className="btn" style={{backgroundColor: "#6c757d"}}>Ver no GitHub</a>
+                </div>
               </div>
             </div>
 
