@@ -294,12 +294,6 @@ export default function Home() {
             </div>
 
             <div className="contact-item">
-              <div className="contact-icon">📍</div>
-              <h3>Localização</h3>
-              <p>Serranópolis do Iguaçu, Paraná, Brasil</p>
-            </div>
-
-            <div className="contact-item">
               <div className="contact-icon">👨‍💻</div>
               <h3>LinkedIn</h3>
               <a href="https://www.linkedin.com/in/thiago-fernando-rech/" target="_blank" rel="noopener noreferrer">thiago-fernando-rech</a>
