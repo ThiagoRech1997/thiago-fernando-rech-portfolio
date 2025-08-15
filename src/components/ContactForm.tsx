@@ -32,7 +32,7 @@ export default function ContactForm() {
   const onSubmit = async (data: ContactFormData) => {
     setIsSubmitting(true);
     setSubmitStatus('idle');
-
+    
     try {
       // Verificar se as variáveis de ambiente estão configuradas
       const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
