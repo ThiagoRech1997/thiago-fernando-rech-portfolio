@@ -1,13 +1,10 @@
 "use client";
 import { useState } from "react";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
-interface HeaderProps {
-  darkMode: boolean;
-  toggleDarkMode: () => void;
-}
+// Removido HeaderProps pois não há mais props obrigatórias
 
-export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
+export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -19,18 +16,11 @@ export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
   };
 
   return (
-    <header className={`header ${darkMode ? 'dark' : ''}`}>
+    <header className={`header`}>
       <div className="container navbar">
         <div className="logo">TR</div>
         
         <div className="nav-controls">
-          <button 
-            className="theme-toggle" 
-            onClick={toggleDarkMode}
-            aria-label={darkMode ? "Ativar modo claro" : "Ativar modo escuro"}
-          >
-            {darkMode ? <Sun size={20} /> : <Moon size={20} />}
-          </button>
           
           <button 
             className="mobile-menu-button" 
@@ -46,7 +36,6 @@ export default function Header({ darkMode, toggleDarkMode }: HeaderProps) {
           <li><a href="#sobre" onClick={closeMobileMenu}>Sobre</a></li>
           <li><a href="#experiencia" onClick={closeMobileMenu}>Experiência</a></li>
           <li><a href="#projetos" onClick={closeMobileMenu}>Projetos</a></li>
-          <li><a href="#blog" onClick={closeMobileMenu}>Blog</a></li>
           <li><a href="#contato" onClick={closeMobileMenu}>Contato</a></li>
         </ul>
       </div>

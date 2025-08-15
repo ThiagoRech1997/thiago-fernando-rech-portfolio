@@ -50,25 +50,9 @@ export default function ProjectCard({
           </div>
         )}
       </div>
-      
       <div className="project-content">
         <h3 className="project-title">{title}</h3>
         <p className="project-description">{description}</p>
-        
-        {challenges && (
-          <div className="project-detail">
-            <h4>Desafios:</h4>
-            <p>{challenges}</p>
-          </div>
-        )}
-        
-        {learnings && (
-          <div className="project-detail">
-            <h4>Aprendizados:</h4>
-            <p>{learnings}</p>
-          </div>
-        )}
-        
         <div className="project-tags">
           {technologies.map((tech, techIndex) => (
             <span key={techIndex} className="project-tag">
@@ -76,32 +60,7 @@ export default function ProjectCard({
             </span>
           ))}
         </div>
-        
         <div className="project-links">
-          {githubUrl && (
-            <a 
-              href={githubUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn btn-secondary"
-            >
-              <Github size={16} />
-              Código
-            </a>
-          )}
-          
-          {demoUrl && (
-            <a 
-              href={demoUrl} 
-              target="_blank" 
-              rel="noopener noreferrer" 
-              className="btn btn-secondary"
-            >
-              <Play size={16} />
-              Demo
-            </a>
-          )}
-          
           {liveUrl && (
             <a 
               href={liveUrl} 
@@ -109,8 +68,17 @@ export default function ProjectCard({
               rel="noopener noreferrer" 
               className="btn"
             >
-              <ExternalLink size={16} />
-              Ver Projeto
+              Ver Página
+            </a>
+          )}
+          {githubUrl && (
+            <a 
+              href={githubUrl} 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="btn btn-secondary"
+            >
+              Ver no GitHub
             </a>
           )}
         </div>

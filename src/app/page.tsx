@@ -10,23 +10,8 @@ import ScrollToTop from "@/components/ScrollToTop";
 import { projects, projectCategories, projectYears } from "@/data/projects";
 
 export default function Home() {
-  const [darkMode, setDarkMode] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [selectedYear, setSelectedYear] = useState('all');
-
-  // Toggle dark mode
-  const toggleDarkMode = () => {
-    setDarkMode(!darkMode);
-  };
-
-  // Apply dark mode to body
-  useEffect(() => {
-    if (darkMode) {
-      document.body.classList.add('dark');
-    } else {
-      document.body.classList.remove('dark');
-    }
-  }, [darkMode]);
 
   // Filter projects
   const filteredProjects = projects.filter(project => {
@@ -36,8 +21,8 @@ export default function Home() {
   });
 
   return (
-    <div className={`app ${darkMode ? 'dark' : ''}`}>
-      <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+    <div className="app">
+      <Header />
       
       <section id="home" className="hero">
         <div className="container">
@@ -101,9 +86,11 @@ export default function Home() {
               transition={{ duration: 0.6, delay: 0.2 }}
               viewport={{ once: true }}
             >
-              <p>Back-End Developer com experiência sólida em desenvolvimento de software, atuando como DBA/ETL na área financeira, garantindo a performance, disponibilidade e integridade de sistemas críticos. Experiência com Microsoft SQL Server, Oracle, PostgreSQL, Python, JavaScript, TypeScript, C# e Java, com foco em automação de processos, desenvolvimento backend e sustentação de dados bancários.</p>
-              <p>Capacidade comprovada em otimização de queries SQL, resolução de incidentes críticos, manutenção de pipelines ETL e integração de sistemas via REST APIs. Forte compromisso com boas práticas de desenvolvimento, segurança da informação e eficiência operacional. Experiência com tecnologias modernas como Docker, Git, GitHub, GitLab e metodologias DevOps.</p>
-              <p>Formado em Ciência da Computação pela Universidade Tecnológica Federal do Paraná, com vasta experiência em pesquisa acadêmica e projetos práticos. Contribuidor ativo da comunidade open source com 37 repositórios no GitHub e reconhecimento como Pull Shark e Arctic Code Vault Contributor.</p>
+              <p>Back-End Developer com 5+ anos de experiência em desenvolvimento de software e banco de dados. Atualmente atuando como Engenheiro de Software na Silicon Village, com foco em sistemas críticos financeiros e automação de processos ETL.</p>
+              
+              <p>Especialista em Microsoft SQL Server, Oracle e PostgreSQL, com forte experiência em otimização de queries, resolução de incidentes críticos e desenvolvimento de APIs REST. Formado em Ciência da Computação pela UTFPR, contribuo ativamente para a comunidade open source com 37 repositórios no GitHub.</p>
+              
+              <p>Atuo também como consultor independente através da <strong>THIAGO FERNANDO RECH CONSULTORIA EM TECNOLOGIA DA INFORMACAO LTDA</strong> (CNPJ: 60.163.883/0001-82), oferecendo soluções em desenvolvimento backend, consultoria em banco de dados e sustentação de sistemas. Disponibilidade para contratações CLT, PJ ou projetos específicos.</p>
             </motion.div>
             
             <motion.div
@@ -147,7 +134,6 @@ export default function Home() {
               <div>
                 <span className="skill-tag">Português (Nativo)</span>
                 <span className="skill-tag">Inglês (Intermediário)</span>
-                <span className="skill-tag">Libras (Básico)</span>
               </div>
             </motion.div>
           </div>
@@ -246,6 +232,75 @@ export default function Home() {
                 <div className="timeline-company">Universidade Tecnológica Federal do Paraná</div>
                 <p>Desenvolvimento de pesquisas na área de computação por mais de 5 anos.</p>
               </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container">
+          <motion.div
+            className="section-header"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2>Serviços Profissionais</h2>
+            <p>Soluções personalizadas para suas necessidades</p>
+          </motion.div>
+          
+          <div className="services-grid">
+            <motion.div
+              className="service-item"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="service-icon">💻</div>
+              <h3>Desenvolvimento Backend</h3>
+              <p>Desenvolvimento de APIs REST, sistemas web e aplicações empresariais com Python, C#, Java e Node.js</p>
+            </motion.div>
+            
+            <motion.div
+              className="service-item"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="service-icon">🗃️</div>
+              <h3>Consultoria em Banco de Dados</h3>
+              <p>Otimização de queries, modelagem de dados, migração e sustentação de SQL Server, Oracle e PostgreSQL</p>
+            </motion.div>
+            
+            <motion.div
+              className="service-item"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="service-icon">⚙️</div>
+              <h3>Automação ETL</h3>
+              <p>Desenvolvimento e manutenção de pipelines ETL, integração de sistemas e automação de processos</p>
+            </motion.div>
+            
+            <motion.div
+              className="service-item"
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              viewport={{ once: true }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="service-icon">🛠️</div>
+              <h3>Sustentação de Sistemas</h3>
+              <p>Monitoramento, resolução de incidentes e manutenção preventiva de sistemas críticos</p>
             </motion.div>
           </div>
         </div>
@@ -419,38 +474,39 @@ export default function Home() {
                 <div className="contact-icon">
                   <Mail size={24} />
                 </div>
-                <h3>Email</h3>
-                <p>thiagorech.1997@gmail.com</p>
-              </div>
-
-              <div className="contact-item">
-                <div className="contact-icon">
-                  <Phone size={24} />
-                </div>
-                <h3>Telefone</h3>
-                <p>+55 (45) 99135-2082</p>
+                <h3>Contato Direto</h3>
+                <p><strong>Email:</strong> thiagorech.1997@gmail.com</p>
+                <p><strong>Telefone:</strong> +55 (45) 99135-2082</p>
               </div>
 
               <div className="contact-item">
                 <div className="contact-icon">
                   <Linkedin size={24} />
                 </div>
-                <h3>LinkedIn</h3>
-                <a href="https://www.linkedin.com/in/thiago-fernando-rech/" target="_blank" rel="noopener noreferrer">
-                  thiago-fernando-rech
-                  <ExternalLink size={14} />
-                </a>
+                <h3>Perfil Profissional</h3>
+                <p><strong>LinkedIn:</strong> 
+                  <a href="https://www.linkedin.com/in/thiago-fernando-rech/" target="_blank" rel="noopener noreferrer">
+                    thiago-fernando-rech
+                    <ExternalLink size={14} />
+                  </a>
+                </p>
+                <p><strong>GitHub:</strong> 
+                  <a href="https://github.com/ThiagoRech1997" target="_blank" rel="noopener noreferrer">
+                    ThiagoRech1997
+                    <ExternalLink size={14} />
+                  </a>
+                </p>
               </div>
 
               <div className="contact-item">
                 <div className="contact-icon">
-                  <Github size={24} />
+                  <ExternalLink size={24} />
                 </div>
-                <h3>GitHub</h3>
-                <a href="https://github.com/ThiagoRech1997" target="_blank" rel="noopener noreferrer">
-                  ThiagoRech1997
-                  <ExternalLink size={14} />
-                </a>
+                <h3>Informações Empresariais</h3>
+                <p><strong>Modalidades:</strong> CLT • PJ • Projetos específicos</p>
+                <p><strong>Disponibilidade:</strong> Remoto</p>
+                <p><strong>Horário:</strong> Comercial e plantões</p>
+                <p><strong>CNPJ:</strong> 60.163.883/0001-82</p>
               </div>
             </motion.div>
 

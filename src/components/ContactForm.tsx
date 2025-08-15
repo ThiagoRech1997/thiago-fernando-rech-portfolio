@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Send, CheckCircle, AlertCircle } from "lucide-react";
 import { motion } from "framer-motion";
+import emailjs from '@emailjs/browser';
 
 const contactSchema = z.object({
   name: z.string().min(2, "Nome deve ter pelo menos 2 caracteres"),
@@ -33,13 +34,45 @@ export default function ContactForm() {
     setSubmitStatus('idle');
 
     try {
-      // Aqui você pode integrar com um serviço de email como EmailJS, SendGrid, etc.
-      // Por enquanto, vamos simular um envio
-      await new Promise(resolve => setTimeout(resolve, 2000));
+      // Verificar se as variáveis de ambiente estão configuradas
+      const publicKey = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+      const serviceId = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+      const templateId = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+
+      if (!publicKey || !serviceId || !templateId) {
+        throw new Error('Configurações do EmailJS não encontradas');
+      }
+
+      // Configurar EmailJS
+      emailjs.init(publicKey);
+
+      // Preparar dados para o template
+      const now = new Date();
+      const timestamp = now.toLocaleString('pt-BR', {
+        timeZone: 'America/Sao_Paulo',
+        day: '2-digit',
+        month: '2-digit',
+        year: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit'
+      });
+
+      const templateParams = {
+        from_name: data.name,
+        from_email: data.email,
+        subject: data.subject,
+        message: data.message,
+        to_name: 'Thiago Fernando Rech',
+        timestamp: timestamp,
+      };
+
+      // Enviar email
+      await emailjs.send(serviceId, templateId, templateParams);
       
-      console.log("Dados do formulário:", data);
+      console.log("Email enviado com sucesso:", data);
       
-      // Simular sucesso
+      // Sucesso
       setSubmitStatus('success');
       reset();
       
