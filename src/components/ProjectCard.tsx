@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { ExternalLink, Github, Play } from "lucide-react";
 import { motion } from "framer-motion";
 
 interface ProjectCardProps {
@@ -21,10 +20,7 @@ export default function ProjectCard({
   description,
   image,
   technologies,
-  challenges,
-  learnings,
   githubUrl,
-  demoUrl,
   liveUrl,
   index
 }: ProjectCardProps) {
