@@ -30,10 +30,15 @@ RUN apk add --no-cache libc6-compat
 
 WORKDIR /app
 
-# Copiar apenas arquivos necessários para produção
+# Copiar package.json e package-lock.json
+COPY package*.json ./
+
+# Instalar apenas dependências de produção
+RUN npm ci --only=production && npm cache clean --force
+
+# Copiar arquivos necessários para produção
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/.next/standalone ./
-COPY --from=builder /app/.next/static ./.next/static
+COPY --from=builder /app/.next ./.next
 
 # Mudar propriedade dos arquivos para o usuário nextjs
 RUN chown -R nextjs:nodejs /app
@@ -48,4 +53,4 @@ EXPOSE 3000
 ENV NODE_ENV=production
 
 # Comando para iniciar a aplicação
-CMD ["node", ".next/standalone/server.js"]
+CMD ["npm", "start"]
