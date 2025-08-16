@@ -48,4 +48,4 @@ EXPOSE 3000
 ENV NODE_ENV=production
 
 # Comando para iniciar a aplicação
-CMD ["node", "server.js"]
+CMD ["node", ".next/standalone/server.js"]
